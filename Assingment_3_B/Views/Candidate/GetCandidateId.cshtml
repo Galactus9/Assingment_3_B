@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "GetCandidateId";
+}
+
+<h2>GetCandidateId</h2>
+
+
+@using (Html.BeginForm("SeeCertificates", "Candidate"))
+{
+    @Html.AntiForgeryToken()
+<form method="post">
+    <div class="form-horizontal">
+        <h4>In order to proced you need to type your ID</h4>
+        <hr />
+        <div class="form-group">
+            <input type="text" name="Id" class="custom-control-label col-md-2" placeholder="Dufault aveliable Id(1-10)" />
+
+        </div>
+        <div class="form-group">
+
+            <input type="submit" value="next" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+
+
+   
+}

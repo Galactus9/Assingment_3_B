@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Assingment_3_B.Models.CertificateOfEachCandidate>
+
+@{
+    ViewBag.Title = "SeeCertificates";
+}
+
+<h2>SeeCertificates</h2>
+@if (Model.ToList().Count() > 0)
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfExamination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.certificate.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.certificate.ScoreNeededToPass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resualt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalScore)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfExamination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.certificate.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.certificate.ScoreNeededToPass)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resualt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.totalScore)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("ExportPDF", "Candidate", new { id = item.Id })'">Export PDF</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    //@using (Html.BeginForm("SeeCertificates", "Candidate"))
+    {
+        @Html.AntiForgeryToken()
+        <form method="post">
+            <div class="form-horizontal">
+                <h4>Invalid ID pleace try again or get out of here</h4>
+                <hr />
+                <div class="form-group">
+                    <input type="text" name="Id" class="custom-control-label col-md-2" placeholder="Dufault aveliable Id(1-10)" />
+
+                </div>
+                <div class="form-group">
+
+                    <input type="submit" value="next" class="btn btn-default" />
+                </div>
+            </div>
+        </form>
+
+
+
+    }
+}

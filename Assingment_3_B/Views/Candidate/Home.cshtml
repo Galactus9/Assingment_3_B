@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<h2 style="color:black">WellCome <br /> Please choose your action</h2>
+
+<body>
+    <div id="container">
+        <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("SeeCertificates","Candidate")'">List of Certificates</button>
+        <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("Candidate")'">Export Certificates</button>
+    </div>
+</body>

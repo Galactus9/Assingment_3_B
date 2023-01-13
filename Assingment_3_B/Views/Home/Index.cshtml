@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:black">Home Page</h2>
+
+<body>
+    <div id="container">
+        <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("Admin")'">Admin</button>
+        <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("GetCandidateId","Candidate")'">Candidate</button>
+    </div>
+</body>
+

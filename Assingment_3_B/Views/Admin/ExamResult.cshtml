@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Assingment_3_B.Models.CertificateOfEachCandidate>
+@{
+    ViewBag.Title = "ExamResult";
+}
+
+<h2>ExamResult</h2>
+
+<table id="AdminExam" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfExamination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScoreReportDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resualt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.candidate.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certificate.Id)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfExamination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScoreReportDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resualt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.candidate.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.certificate.Id)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
