@@ -10,7 +10,7 @@ namespace Assingment_3_B.Data.Repository
 {
     internal interface ICandidateRepository : IRepository<Candidate>
     {
-    IEnumerable<CertificateOfEachCandidate> GetPassedExams(int id);
+    IEnumerable<CertificateOfEachCandidate> GetPassedExams(int? id);
 
     }
 }

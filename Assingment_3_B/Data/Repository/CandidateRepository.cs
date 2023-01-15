@@ -13,9 +13,13 @@ namespace Assingment_3_B.Data.Repository
         {
         }
 
-        public IEnumerable<CertificateOfEachCandidate> GetPassedExams(int candidateId)
+        public IEnumerable<CertificateOfEachCandidate> GetPassedExams(int? candidateId)
         {
-            return Context.CertificateOfEachCandidate.Where(x => x.Resualt == "Pass" && x.candidate.Id == candidateId).ToList();
+            if (candidateId > 0)
+            {
+                return Context.CertificateOfEachCandidate.Where(x => x.Resualt == "Pass" && x.candidate.Id == candidateId).ToList();
+            }
+            return Enumerable.Empty<CertificateOfEachCandidate>();
         }
         public CertificateOfEachCandidate GetExam(int id)
         {

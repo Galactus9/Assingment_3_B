@@ -31,10 +31,16 @@ namespace Assingment_3_B.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SeeCertificates(int id)
+        public ActionResult SeeCertificates(int? id)
         {
-            // Process the integer value here
-            return View(repo.GetPassedExams(id));
+            try
+            {
+                return View(repo.GetPassedExams(id));
+            }
+            catch
+            {
+				return RedirectToAction("GetCandidateId");
+            }
         }
 
         public ActionResult ExportPDF(int id) 
